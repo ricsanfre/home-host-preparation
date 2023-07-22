@@ -1,0 +1,28 @@
+---
+- name: Configure RaspberryPi
+  hosts: raspberrypi
+  become: true
+  gather_facts: true
+  roles:
+    - role: ricsanfre.docker
+  tasks:
+
+    - name: Install common packages
+      apt:
+        name: "{{ item }}"
+        update_cache: true
+        state: present
+      with_items:
+        - libraspberrypi-bin
+        - linux-modules-extra-raspi
+        - fake-hwclock
+        - bridge-utils
+        - make
+
+    - name: Set GPU memory split to 16 MB
+      lineinfile:
+        path: /boot/firmware/config.txt
+        line: "gpu_mem=16"
+        create: true
+        mode: 0755
+      notify: reboot

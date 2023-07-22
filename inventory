@@ -1,0 +1,11 @@
+[raspberrypi]
+khazad-dum ansible-host=192.168.1.33
+
+[raspberrypi:vars]
+ansible_ssh_user=ricsanfre
+ansible_ssh_private_key_file=~/.ssh/id_rsa
+
+[laptop]
+dol-guldur ansible_host=localhost ansible_connection=local
+
+
