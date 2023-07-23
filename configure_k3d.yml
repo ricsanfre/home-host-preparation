@@ -1,0 +1,12 @@
+---
+- name: Install K3d
+  hosts: raspberrypi
+  become: true
+  gather_facts: true
+  roles:
+      # Install kubectl and helm
+    - role: ricsanfre.k8s_cli
+  # tasks:
+  #   - name: Install k3d
+  #     shell: |
+  #       wget -q -O - https://raw.githubusercontent.com/rancher/k3d/main/install.sh | bash

@@ -1,3 +1,21 @@
 # docker vars
 docker_users:
   - ricsanfre
+
+
+
+##################################
+# ricsanfre.k8s_cli role variables
+##################################
+
+install_helm: true
+helm_version: 'v3.9.4'
+install_kubectl: true
+
+
+# OS and hardware architectire
+k8s_platform: linux
+k8s_arch: arm64
+
+kubectl_version: 1.27.4
+kubectl_checksum_binary: "sha512:7ab5187787b5858c21910dcd12a0612e8e7cf7446f3b3db9549e46908d90ede4ecdead334bf2cd12ae7acc02edeffdabd415c4a44ca8a8e45bb26b849434505b"
